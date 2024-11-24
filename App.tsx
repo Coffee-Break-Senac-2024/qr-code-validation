@@ -19,7 +19,7 @@ const validateFromQRCode = async (qrData) => {
     md.update(hash);
 
     const isValid = publicKeyObject.verify(md.digest().bytes(), signatureBytes);
-    const message = isValid ? "Assinatura válida!" : "Assinatura inválida!";
+    const message = isValid ? "Documento válido!" : "Documento inválido!";
 
     return message;
   } catch (error) {
@@ -114,7 +114,7 @@ export default function App() {
       ) : (
         <>
           <Image
-            source={require('./assets/logo.png')} // Adicione seu logotipo na pasta 'assets' e substitua o nome do arquivo
+            source={require('./assets/logo.png')}
             style={styles.logo}
             resizeMode="contain"
           />
